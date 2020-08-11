@@ -1,0 +1,20 @@
+$primaryColor: #0b1014;
+
+$borderRadius: 3px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primaryColor;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  padding: 40px;
+}
+
+@import "./components/Search/style";
+@import "./components/Movie/style";

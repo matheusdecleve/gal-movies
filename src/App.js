@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Search from "./components/Search";
+import Movie from "./components/Movie";
+import Loader from "./components/Loading";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  const [movies, setMovies] = useState([]);
+
+  const isLoading = (loading) => {
+    setLoading(loading);
+  };
+  const hasData = (data) => {
+    setMovies(data);
+    console.log(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Search loading={isLoading} data={hasData} />
+      <div className="moviesContainer">
+        {loading === false ? (
+          movies.map((movie) => {
+            return <Movie data={movie} key={movie.imdbID} />;
+          })
+        ) : (
+          <Loader />
+        )}
+      </div>
     </div>
   );
 }
