@@ -13,21 +13,21 @@ function App() {
   };
   const hasData = (data) => {
     setMovies(data);
-    console.log(data);
   };
 
   return (
     <div className="container">
       <Search loading={isLoading} data={hasData} />
-      <div className="moviesContainer">
-        {loading === false ? (
-          movies.map((movie) => {
+
+      {loading === false ? (
+        <div className="moviesContainer">
+          {movies.map((movie) => {
             return <Movie data={movie} key={movie.imdbID} />;
-          })
-        ) : (
-          <Loader />
-        )}
-      </div>
+          })}
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Search = (props) => {
     props.loading(true);
 
     await axios
-      .get(`http://www.omdbapi.com/?s=${search}&r=json&apikey=517a0b64&`)
+      .get(`http://www.omdbapi.com/?s=${search}&apikey=517a0b64&`)
       .then((res) => {
         res.data.Search ? props.data(res.data.Search) : props.data([]);
       });
