@@ -1,0 +1,28 @@
+$primaryColor: #fd554d;
+$secondaryColor: #0b1014;
+
+$borderRadius: 3px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $secondaryColor;
+  color: white;
+  font-family: monospace;
+}
+
+.container {
+  width: 100%;
+  padding: 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@import "./components/Search/style";
+@import "./components/Movie/style";
+@import "./components/InfoModal/style";
