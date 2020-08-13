@@ -1,8 +1,21 @@
-import React from "react";
-import Routes from "./routes";
+import React, { useState } from "react";
 
-function App() {
-  return <Routes />;
-}
+import Search from "./components/Search";
+import MovieList from "./components/MovieList";
 
-export default App;
+const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  const dataSearched = (data) => {
+    setMovies(data);
+  };
+
+  return (
+    <div className="container">
+      <Search data={dataSearched} />
+      <MovieList movies={movies} />
+    </div>
+  );
+};
+
+export default Home;

@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 $primaryColor: #fd554d;
 $secondaryColor: #0b1014;
 
@@ -5,12 +8,16 @@ $borderRadius: 3px;
 
 * {
   box-sizing: border-box;
+  outline: none;
+  text-decoration:none;
 }
 
 body {
+  margin:0;
+  padding:0;
   background: $secondaryColor;
   color: white;
-  font-family: monospace;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -30,6 +37,23 @@ body {
   justify-content: space-between;
 }
 
+p,a,span {
+  font-weight: 400;
+}
+
+b,strong {
+  font-weight: 700;
+}
+
+h1,h2,h3 {
+  font-weight: 700;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+@import './components/Loader/style';
 @import "./components/Search/style";
 @import "./components/Movie/style";
 @import "./components/InfoModal/style";

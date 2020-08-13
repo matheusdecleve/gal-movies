@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
-
-import InfoModal from "../InfoModal";
 
 const Movie = (props) => {
-  const { imdbID, Title, Poster, Year } = props.data;
+
+  const { imdbID, Title, Poster, Year } = props.movie;
 
   const [loved, setLoved] = useState(
     imdbID === localStorage.getItem(imdbID) ? true : false
@@ -25,6 +23,10 @@ const Movie = (props) => {
     }
   };
 
+  const selectMovie = (id) => {
+    props.selected(id);
+  }
+
   return (
     <div className="movie">
       {Poster === "N/A" ? (
@@ -35,8 +37,7 @@ const Movie = (props) => {
       <div className="content">
         <b>{Title}</b>
         <p>{Year}</p>
-
-        <Link to={`movie/${imdbID}`}>{Title}</Link>
+        <button type="button" onClick={() => selectMovie(imdbID)}>Abrir modal</button>
       </div>
       <button
         type="button"
@@ -46,7 +47,6 @@ const Movie = (props) => {
       >
         {loved ? <FaHeart /> : <FaRegHeart />}
       </button>
-      <InfoModal id={imdbID} />
     </div>
   );
 };
