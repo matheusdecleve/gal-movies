@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 
+import { FaArrowRight } from "react-icons/fa";
+
 Modal.setAppElement("#root");
 
 const customStyles = {
@@ -42,8 +44,8 @@ const InfoModal = (props) => {
 
   return (
     <>
-      <button className="full" onClick={openModal}>
-        Abrir
+      <button className="openModal" onClick={openModal}>
+        <FaArrowRight />
       </button>
       <Modal
         isOpen={modalIsOpen}
