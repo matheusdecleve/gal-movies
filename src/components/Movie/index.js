@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import InfoModal from "../InfoModal";
 
@@ -34,10 +35,11 @@ const Movie = (props) => {
       <div className="content">
         <b>{Title}</b>
         <p>{Year}</p>
+        <Link to={`movie/${imdbID}`}>ver mais</Link>
       </div>
       <button
         type="button"
-        className={loved ? "loved" : ""}
+        className={loved ? "loved heart" : "heart"}
         id={imdbID}
         onClick={() => loveThisPost()}
       >
