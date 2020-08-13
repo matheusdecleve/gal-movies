@@ -35,7 +35,8 @@ const Movie = (props) => {
       <div className="content">
         <b>{Title}</b>
         <p>{Year}</p>
-        <Link to={`movie/${imdbID}`}>ver mais</Link>
+
+        <Link to={`movie/${imdbID}`}>{Title}</Link>
       </div>
       <button
         type="button"
