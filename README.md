@@ -4,9 +4,9 @@ Aplicação foi desenvolvida em JavaScript utilizando o framework ReactJs. A apl
 
 ##### Instruções para rodar a aplicação:
 
-- Clone este repositório `git clone https://github.com/matheusdecleve/gal-movies.git`.
-- Instale os pacotes e dependências `npm install`.
-- Execute o projeto `npm start`.
+1. Clone este repositório `git clone https://github.com/matheusdecleve/gal-movies.git`.
+2. Instale os pacotes e dependências `npm install`.
+3. Execute o projeto `npm start`.
 
 ##### Bibliotecas utilizadas:
 
