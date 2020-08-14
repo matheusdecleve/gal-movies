@@ -13,6 +13,7 @@ Aplicação foi desenvolvida em JavaScript utilizando o framework ReactJs. A apl
 - Requisições na API - [Axios](https://www.npmjs.com/package/axios)
 - Ícones - [React-icons](https://www.npmjs.com/package/react-icons)
 - Modal - [React-modal](https://www.npmjs.com/package/react-modal)
+- SASS - [Node-sass](https://www.npmjs.com/package/node-sass)
 
 ##### OMDb API:
 
