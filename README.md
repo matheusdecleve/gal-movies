@@ -10,10 +10,10 @@ Aplicação foi desenvolvida em JavaScript utilizando o framework ReactJs. A apl
 
 ##### Bibliotecas utilizadas:
 
-- Requisições na API - [Axios](https://www.npmjs.com/package/axios){:target="\_blank"}
-- Ícones - [React-icons](https://www.npmjs.com/package/react-icons){:target="\_blank"}
-- Modal - [React-modal](https://www.npmjs.com/package/react-modal){:target="\_blank"}
+- Requisições na API - [Axios](https://www.npmjs.com/package/axios)
+- Ícones - [React-icons](https://www.npmjs.com/package/react-icons)
+- Modal - [React-modal](https://www.npmjs.com/package/react-modal)
 
 ##### OMDb API:
 
-Foi utilizado a api [The Open Movie Database](http://www.omdbapi.com/){:target="\_blank"} para obter as informações dos filmes e séries.
+Foi utilizado a api [The Open Movie Database](http://www.omdbapi.com/) para obter as informações dos filmes e séries.
