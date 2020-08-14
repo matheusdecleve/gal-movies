@@ -1,4 +1,4 @@
-## Search Movies
+## GAL Movies
 
 Aplicação foi desenvolvida em JavaScript utilizando o framework ReactJs. A aplicação consiste em um portal de filmes/séries, onde permite o usuário buscar por um filme e visualizar suas informações, o usuário também pode adicionar ou remover seus filmes preferidos de favoritos.
 
