@@ -7,9 +7,15 @@
     border: 0;
     border-radius: $borderRadius;
 
+    background-image: url('../../assets/search.svg');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 15px;
+
     &[type="text"] {
       width: 100%;
-      padding: 5px 20px;
+      padding: 5px 40px;
     }
   }
 }

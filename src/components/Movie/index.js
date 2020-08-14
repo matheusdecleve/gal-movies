@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { FaHeart, FaArrowRight } from "react-icons/fa";
-
+import { FaHeart } from "react-icons/fa";
 import DefaultImage from '../../assets/defaultimage.jpg';
 
 const Movie = (props) => {
   const { imdbID, Title, Poster, Year } = props.movie; 
 
-  const [loved, setLoved] = useState(localStorage.getItem(imdbID));
+  const [loved, setLoved] = useState(localStorage.getItem(imdbID) !== null ? true : false);
 
   const loveThisPost = () => {
-    let heartButton = document.getElementById(imdbID);
-
     if (loved) {
       localStorage.removeItem(imdbID);
       setLoved(false);
@@ -26,10 +23,10 @@ const Movie = (props) => {
 
   return (
     <div className="movie">     
-      {Poster === "N/A" ? (
-        <img src={DefaultImage} alt="" />
+      {Poster === "N/A" || "" ? (
+        <img src={DefaultImage} alt="Capa do filme" title="Imagem não disponível" />
       ) : (
-        <img src={Poster} alt="" />
+        <img src={Poster} alt="Capa do filme" title={Title} />
       )}
       <div className="movie__content">
         <b>{Title}</b>
@@ -42,7 +39,7 @@ const Movie = (props) => {
       </button>
       <button
         type="button"
-        className={`heart heart--${loved ? true : false}`}
+        className={`heart heart--${loved}`}
         id={imdbID}
         onClick={() => loveThisPost()}>
         <FaHeart />

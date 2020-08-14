@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import Loader from '../Loader';
 
 const Search = (props) => {
@@ -15,10 +14,11 @@ const Search = (props) => {
     await axios
       .get(`http://www.omdbapi.com/?s=${search}&apikey=517a0b64&`)
       .then((res) => {
-        res.data.Search ? props.data(res.data.Search) : props.data([]);
-        setLoading(false);
+        res.data.Search ? props.data(res.data.Search) : props.data([]);     
+        setSearch("");   
       });
-    setSearch("");
+
+    setLoading(false);    
   }
 
   if(loading) {

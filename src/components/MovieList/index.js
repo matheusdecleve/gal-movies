@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Movie from '../Movie';
 import InfoModal from "../InfoModal";
 

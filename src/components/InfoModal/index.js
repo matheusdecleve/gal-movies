@@ -105,7 +105,7 @@ const InfoModal = (props) => {
           {infoMovie.Poster === "N/A" ? (
             <img src={DefaultImage} alt="Capa do filme" title="Imagem não disponível" />
           ) : (
-            <img src={infoMovie.Poster} alt={infoMovie.Title} title={infoMovie.Title} />
+            <img src={infoMovie.Poster} alt="Capa do filme" title={infoMovie.Title} />
           )}
         </div>
       </div>}
