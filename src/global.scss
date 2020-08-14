@@ -3,8 +3,22 @@
 
 $primaryColor: #fd554d;
 $secondaryColor: #0b1014;
+$grayColor: #7b8c98;
 
 $borderRadius: 3px;
+
+@mixin btnTransparent {
+  outline: 0;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  border: 0;
+  background: transparent;
+  color: white;
+  &:hover {
+    color:$primaryColor;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -18,6 +32,18 @@ body {
   background: $secondaryColor;
   color: white;
   font-family: 'Open Sans', sans-serif;
+}
+
+p,a,span {
+  font-weight: 400;
+}
+
+b,strong {
+  font-weight: 700;
+}
+
+h1,h2,h3 {
+  font-weight: 700;
 }
 
 .container {
@@ -37,20 +63,32 @@ body {
   justify-content: space-between;
 }
 
-p,a,span {
-  font-weight: 400;
-}
+.heart {
+  @include btnTransparent;       
+  z-index: 2;
 
-b,strong {
-  font-weight: 700;
-}
+  &--false {
+    &:hover {
+      color:white;
+      animation: pulse 1s ease infinite;
+    }
+  }
 
-h1,h2,h3 {
-  font-weight: 700;
+  &--true {
+    visibility: visible !important;
+    color: $primaryColor;
+
+    &:hover {
+      animation: none;
+    }
+  }   
 }
 
 .ReactModal__Body--open {
   overflow: hidden;
+}
+.ReactModal__Overlay--after-open {
+  z-index: 9;
 }
 
 @import './components/Loader/style';

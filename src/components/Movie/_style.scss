@@ -9,18 +9,13 @@
   width: calc(20% - 20px);
   height: 320px;
   margin: 10px;
+  
   position: relative;
-
   overflow: hidden;
+
   border-radius: $borderRadius;
 
-  img {
-    width: 100%;
-    height: 100%;
-    transition: 0.2s;
-  }
-
-  .content {
+  &__content {
     visibility: hidden;
     position: absolute;
     bottom: 0;
@@ -33,47 +28,44 @@
 
     p {
       margin: 5px 0;
-    }
+    }    
+  }
+
+  &__openModal {
+    @include btnTransparent; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;      
   }
 
   .heart {
-    visibility: hidden;
     position: absolute;
     top: 20px;
     right: 20px;
-
-    outline: 0;
-    cursor: pointer;
-
-    font-size: 1.2rem;
-    border: 0;
-    background: transparent;
-    color: white;
-
-    &:hover {
-      animation: pulse 1s ease infinite;
-      color: $primaryColor;
     }
+
+  button {
+    visibility: hidden;
   }
 
-  .loved {
-    color: $primaryColor;
-    visibility: visible;
-
-    &:hover {
-      animation: none;
-    }
+  img {
+    width: 100%;
+    height: 100%;   
+    transition: 0.2s;   
   }
 
   &:hover {
     background-image: linear-gradient(transparent, #000);
-    .content,
-    button {
+
+    .movie__content, button {
       visibility: visible;
     }
+
     img {
       opacity: 0.1;
-      z-index: 10;
     }
   }
 }

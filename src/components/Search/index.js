@@ -18,7 +18,6 @@ const Search = (props) => {
         res.data.Search ? props.data(res.data.Search) : props.data([]);
         setLoading(false);
       });
-
     setSearch("");
   }
 
