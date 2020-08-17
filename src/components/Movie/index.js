@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
-import DefaultImage from '../../assets/defaultimage.jpg';
 
-const Movie = (props) => {
-  const { imdbID, Title, Poster, Year } = props.movie; 
+import DefaultImage from "../../assets/defaultimage.jpg";
 
-  const [loved, setLoved] = useState(localStorage.getItem(imdbID) !== null ? true : false);
+const Movie = ({ movie, selected }) => {
+  const { imdbID, Title, Poster, Year } = movie;
+
+  const [loved, setLoved] = useState(
+    localStorage.getItem(imdbID) !== null ? true : false
+  );
 
   const loveThisPost = () => {
     if (loved) {
@@ -18,30 +21,35 @@ const Movie = (props) => {
   };
 
   const selectMovie = (id) => {
-    props.selected(id);
-  }
+    selected(id);
+  };
 
   return (
-    <div className="movie">     
+    <div className="movie">
       {Poster === "N/A" || "" ? (
-        <img src={DefaultImage} alt="Capa do filme" title="Imagem não disponível" />
+        <img
+          src={DefaultImage}
+          alt="Capa do filme"
+          title="Imagem não disponível"
+        />
       ) : (
         <img src={Poster} alt="Capa do filme" title={Title} />
       )}
       <div className="movie__content">
-        <b>{Title}</b>
-        <p>{Year}</p>        
+        <h1>{Title}</h1>
+        <p>{Year}</p>
       </div>
-      <button 
-        type="button" 
+      <button
+        type="button"
         className="movie__openModal"
-        onClick={() => selectMovie(imdbID)}>
-      </button>
+        onClick={() => selectMovie(imdbID)}
+      ></button>
       <button
         type="button"
         className={`heart heart--${loved}`}
         id={imdbID}
-        onClick={() => loveThisPost()}>
+        onClick={() => loveThisPost()}
+      >
         <FaHeart />
       </button>
     </div>

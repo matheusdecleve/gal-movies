@@ -3,9 +3,9 @@
 $primaryColor: #fd554d;
 $secondaryColor: #0b1014;
 $lightColor: #333333;
-$grayColor: #7b8c98;
+$grayColor: #7c7c7c;
 
-$borderRadius: 3px;
+$borderRadius: 6px;
 
 @mixin btnTransparent {
   outline: 0;
@@ -54,38 +54,39 @@ h3 {
 .container {
   width: 100%;
   padding: 40px;
+
+  @media screen and(max-width:763px) {
+    padding: 20px 10px;
+  }
 }
 
-.containerFlex {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.flex {
+.flexContainer {
   display: flex;
   justify-content: space-between;
 }
 
 .heart {
   @include btnTransparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 2;
 
   &--false {
     &:hover {
       color: white;
-      animation: pulse 1s ease infinite;
     }
   }
 
   &--true {
     visibility: visible !important;
     color: $primaryColor;
+  }
 
-    &:hover {
-      animation: none;
-    }
+  p {
+    padding-left: 10px;
+    font-weight: 700;
+    margin: 0;
   }
 }
 

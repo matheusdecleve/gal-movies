@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import Search from "./components/Search";
-import NotFound from "./components/NotFound";
 import MovieList from "./components/MovieList";
 
 const Home = () => {
@@ -18,8 +17,8 @@ const Home = () => {
 
   return (
     <div className="container">
-      <Search data={dataSearched} />
-      {notFound ? <NotFound /> : <MovieList movies={movies} />}
+      <Search info={dataSearched} />
+      <MovieList movies={movies} error={notFound} />
     </div>
   );
 };

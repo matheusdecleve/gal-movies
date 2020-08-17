@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
-import Movie from '../Movie';
+import React, { useState } from "react";
+
+import Movie from "../Movie";
 import InfoModal from "../InfoModal";
+import NotFound from "../NotFound";
 
-const MovieList = ({movies}) => {
-
+const MovieList = ({ movies, error }) => {
   const [selectedMovie, setSelectedMovie] = useState([]);
   const [visibleModal, setVisibleModal] = useState(false);
 
   const selectMovie = (movie) => {
-    setSelectedMovie(movie)
-    setVisibleModal(true)
-  }
+    setSelectedMovie(movie);
+    setVisibleModal(true);
+  };
 
-  return (
-    <>
-      <div className="containerFlex">
-        {
-          movies.map((item) => {
-            return <Movie movie={item} key={item.imdbID} selected={selectMovie} />;
-          })
-        }
+  if (error) {
+    return <NotFound />;
+  } else {
+    return (
+      <div className="movies">
+        {movies.map((item) => {
+          return (
+            <Movie key={item.imdbID} movie={item} selected={selectMovie} />
+          );
+        })}
+        <InfoModal
+          id={selectedMovie}
+          open={visibleModal}
+          close={setVisibleModal}
+        />
       </div>
-      <InfoModal data={selectedMovie} open={visibleModal} close={setVisibleModal} />
-    </>
-  )
-}
+    );
+  }
+};
 
-export default MovieList
+export default MovieList;

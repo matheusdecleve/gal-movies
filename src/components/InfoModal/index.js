@@ -1,41 +1,43 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
-import axios from "axios";
-
 import { FaArrowLeft, FaHeart } from "react-icons/fa";
+import axios from "axios";
+import Modal from "react-modal";
+
 import DefaultImage from "../../assets/defaultimage.jpg";
 import Loader from "../Loader";
 
 Modal.setAppElement("#root");
 
-const InfoModal = (props) => {
+const InfoModal = ({ id, open, close }) => {
   const [loading, setLoading] = useState(false);
   const [infoMovie, setInfoMovie] = useState([]);
+  const [ratings, setRatings] = useState([]);
   const [loved, setLoved] = useState();
 
   async function afterOpenModal() {
     setLoading(true);
 
     await axios
-      .get(`http://www.omdbapi.com/?i=${props.data}&apikey=517a0b64&`)
+      .get(`http://www.omdbapi.com/?i=${id}&apikey=517a0b64&`)
       .then((res) => {
         setInfoMovie(res.data);
+        setRatings(res.data.Ratings);
+        setLoved(localStorage.getItem(id) ? true : false);
       });
 
-    setLoved(localStorage.getItem(props.data) ? true : false);
     setLoading(false);
   }
 
   const loveThisPost = () => {
-    let heartButton = document.getElementById(props.data);
+    let heartButton = document.getElementById(id);
 
     if (loved) {
-      localStorage.removeItem(props.data);
+      localStorage.removeItem(id);
       heartButton.classList.remove("heart--true");
       heartButton.classList.add("heart--false");
       setLoved(false);
     } else {
-      localStorage.setItem(props.data, props.data);
+      localStorage.setItem(id, id);
       heartButton.classList.remove("heart--false");
       heartButton.classList.add("heart--true");
       setLoved(true);
@@ -43,32 +45,36 @@ const InfoModal = (props) => {
   };
 
   const closeModal = () => {
-    props.close(false);
+    close(false);
   };
 
   return (
-    <Modal isOpen={props.open} onAfterOpen={afterOpenModal} className="modal">
+    <Modal onAfterOpen={afterOpenModal} isOpen={open} className="modal">
       {loading ? (
         <Loader />
       ) : (
-        <div className="container flex">
+        <div className="container flexContainer">
           <div className="modal__info">
             <button className="modal__back" onClick={() => closeModal()}>
               <FaArrowLeft />
             </button>
 
             <b>
-              {infoMovie.Runtime} &bull; {infoMovie.Year} &bull;{" "}
+              {infoMovie.Runtime} - {infoMovie.Year} -{" "}
               <span> {infoMovie.Rated}</span>
             </b>
 
             <h1>{infoMovie.Title}</h1>
 
-            <div className="flex">
-              <div>
-                <b>IMDb</b>
-                <p>{infoMovie.imdbRating}/10</p>
-              </div>
+            <div className="modal__info__ratings">
+              {ratings.map((item) => {
+                return (
+                  <div>
+                    <b>{item.Source}</b>
+                    <p>{item.Value}</p>
+                  </div>
+                );
+              })}
               <div>
                 <button
                   type="button"
@@ -86,10 +92,12 @@ const InfoModal = (props) => {
               </div>
             </div>
 
-            <b>Plot</b>
-            <p>{infoMovie.Plot}</p>
+            <div className="modal__info__plot">
+              <b>Plot</b>
+              <p>{infoMovie.Plot}</p>
+            </div>
 
-            <div className="flex">
+            <div className="modal__info__cgd">
               <div>
                 <b>Cast</b>
                 <p>{infoMovie.Actors}</p>
@@ -105,21 +113,17 @@ const InfoModal = (props) => {
             </div>
           </div>
 
-          <div className="modal__image">
-            {infoMovie.Poster === "N/A" ? (
-              <img
-                src={DefaultImage}
-                alt="Capa do filme"
-                title="Imagem não disponível"
-              />
-            ) : (
-              <img
-                src={infoMovie.Poster}
-                alt="Capa do filme"
-                title={infoMovie.Title}
-              />
-            )}
-          </div>
+          {infoMovie.Poster === "N/A" ? (
+            <div
+              className="modal__image"
+              style={{ backgroundImage: `url(${DefaultImage})` }}
+            ></div>
+          ) : (
+            <div
+              className="modal__image"
+              style={{ backgroundImage: `url(${infoMovie.Poster})` }}
+            ></div>
+          )}
         </div>
       )}
     </Modal>

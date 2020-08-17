@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Loader from "../Loader";
 
-const Search = (props) => {
+const Search = ({ info }) => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -14,9 +14,7 @@ const Search = (props) => {
     await axios
       .get(`http://www.omdbapi.com/?s=${search}&apikey=517a0b64&`)
       .then((res) => {
-        res.data.Search
-          ? props.data(res.data.Search, false)
-          : props.data("", true);
+        res.data.Search ? info(res.data.Search, false) : info("", true);
         setSearch("");
       });
 
