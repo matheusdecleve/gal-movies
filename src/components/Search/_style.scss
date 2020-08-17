@@ -1,21 +1,29 @@
 .search {
-  width: 100%;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 
-  input {
-    height: 50px;
-    border: 0;
+  input[type="text"] {
+    width: calc(100% - 20px);
+    height: 60px;
+    padding: 5px 20px;
+
+    border: solid 2px $lightColor;
     border-radius: $borderRadius;
+    background: transparent;
+    color: white;
+    font-size: 1.4rem;
 
-    background-image: url('../../assets/search.svg');
-    background-size: 15px;
+    background-image: url("../../assets/search.svg");
+    background-size: 20px;
     background-repeat: no-repeat;
-    background-position: left;
-    background-position-x: 15px;
+    background-position: center right 20px;
 
-    &[type="text"] {
-      width: 100%;
-      padding: 5px 40px;
+    transition: 0.2s;
+
+    &:focus,
+    &:hover {
+      border-color: $primaryColor;
+      box-shadow: 0px 0px 10px $primaryColor;
     }
   }
 }
