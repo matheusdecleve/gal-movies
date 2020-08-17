@@ -59,22 +59,28 @@ const InfoModal = ({ id, open, close }) => {
               <FaArrowLeft />
             </button>
 
-            <b>
-              {infoMovie.Runtime} - {infoMovie.Year} -{" "}
-              <span> {infoMovie.Rated}</span>
-            </b>
+            <div className="modal__info__runtimeYearRated">
+              <span>{infoMovie.Runtime}</span>
+              <span>{infoMovie.Year}</span>
+              <span>{infoMovie.Rated}</span>
+            </div>
 
-            <h1>{infoMovie.Title}</h1>
+            <div className="modal__info__title">
+              <h1>{infoMovie.Title}</h1>
+            </div>
 
             <div className="modal__info__ratings">
               {ratings.map((item) => {
                 return (
-                  <div>
-                    <b>{item.Source}</b>
+                  <div
+                    key={item.Source}
+                    className={`modal__info__ratings--rating ${item.Source}`}
+                  >
                     <p>{item.Value}</p>
                   </div>
                 );
               })}
+
               <div>
                 <button
                   type="button"
@@ -84,9 +90,9 @@ const InfoModal = ({ id, open, close }) => {
                 >
                   <FaHeart />{" "}
                   {loved ? (
-                    <p>Remover dos favoritos</p>
+                    <p>Remove from favorites</p>
                   ) : (
-                    <p>Adicionar aos favoritos</p>
+                    <p>Add to favorites</p>
                   )}
                 </button>
               </div>
@@ -97,7 +103,7 @@ const InfoModal = ({ id, open, close }) => {
               <p>{infoMovie.Plot}</p>
             </div>
 
-            <div className="modal__info__cgd">
+            <div className="modal__info__castGenreDirector">
               <div>
                 <b>Cast</b>
                 <p>{infoMovie.Actors}</p>

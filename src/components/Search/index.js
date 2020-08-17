@@ -28,7 +28,7 @@ const Search = ({ info }) => {
       <form className="search" onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="O que você gostaria de assistir hoje?"
+          placeholder="What would you like to watch today?"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

@@ -4,20 +4,17 @@ Desenvolvida em JavaScript utilizando o framework ReactJs a aplicação consiste
 
 ##### Telas da aplicação
 
-- Página incial
-  A página inicial possui um campo(input) de busca para procurar os filmes, a mesma possui dois estados: "Empty", quando a aplicação é iniciada, e "Not Found" quando a busca não retorna nenhum resultado.
+- Página incial: Possui um campo(input) de busca para procurar os filmes, a mesma possui dois estados: "Empty", quando a aplicação é iniciada, e "Not Found" quando a busca não retorna nenhum resultado.
 
-- Página de carregamento
-  É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
+- Página de carregamento: É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
 
-- Página do filme
-  Essa página exibe todas as informações do filme como título, poster, atores e outras informações. Ao invés de utilizar rotas, preferi utilizar um modal pois a performance foi melhor.
+- Página do filme: Exibe todas as informações do filme como título, poster, atores e outras informações. Ao invés de utilizar rotas, preferi utilizar um modal pois a performance foi melhor.
 
 ##### Instruções para rodar a aplicação:
 
-1. Clone este repositório `git clone https://github.com/matheusdecleve/gal-movies.git`.
-2. Instale os pacotes e dependências `npm install`.
-3. Execute o projeto `npm start`.
+1. Clone este repositório `$ git clone https://github.com/matheusdecleve/gal-movies.git`.
+2. Instale os pacotes e dependências `$ npm install`.
+3. Execute o projeto `$ npm start`.
 
 ##### Bibliotecas utilizadas:
 

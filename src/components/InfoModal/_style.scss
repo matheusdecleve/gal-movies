@@ -1,23 +1,45 @@
+@mixin subtitle {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: -2px;
+  left: -2px;
+
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+}
+
 .modal {
   width: 100%;
   height: 100%;
   padding: 20px 40px;
   padding-right: 140px;
-
   overflow-y: scroll;
 
-  background-color: #111;
+  background-color: $secondaryColor;
   color: #fff;
   border: 0;
 
+  &__back {
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 25px;
+
+    font-size: 1.4rem;
+    border: 0;
+    background: transparent;
+    color: $grayColor;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
   &__info {
     width: 70%;
-
-    h1 {
-      font-size: 4rem;
-      line-height: 4.5rem;
-      margin: 30px 0;
-    }
 
     p {
       font-size: 1rem;
@@ -32,13 +54,40 @@
       color: $grayColor;
     }
 
-    span {
-      display: inline-block;
-      padding: 2px 5px;
-      font-weight: 700;
-      border-radius: $borderRadius;
-      background: $lightColor;
-      color: #0b1014;
+    &__runtimeYearRated {
+      display: flex;
+
+      span {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: $grayColor;
+
+        &:nth-child(2) {
+          &:before,
+          &:after {
+            content: "·";
+            display: inline-block;
+            padding: 0 8px;
+            font-size: 0.8rem;
+          }
+        }
+
+        &:last-child {
+          display: inline-block;
+          padding: 2px 5px;
+          border-radius: $borderRadius;
+          background: $grayColor;
+          color: $secondaryColor;
+        }
+      }
+    }
+
+    &__title {
+      h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        margin: 30px 0;
+      }
     }
 
     &__ratings {
@@ -46,18 +95,80 @@
       align-items: center;
       justify-content: flex-start;
 
-      div {
-        padding-right: 20px;
+      margin-bottom: 50px;
+
+      &--rating {
+        padding: 0 10px;
+        margin-right: 20px;
+        border: solid 2px $lightColor;
+        border-radius: $borderRadius;
+        color: white;
+        font-weight: 700;
+        display: flex;
+
+        position: relative;
+
+        p {
+          font-weight: 700;
+        }
+
+        &[class*="Internet"] {
+          padding-left: 70px;
+
+          &:before {
+            @include subtitle;
+            content: "IMDb";
+            height: calc(100% + 4px);
+
+            background: #fd9b1f;
+            color: black;
+          }
+        }
+
+        &[class*="Rotten"] {
+          padding-left: 55px;
+
+          &:before {
+            @include subtitle;
+            content: "*";
+            height: calc(100% - 4px);
+
+            font-size: 2rem;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 8px;
+
+            background: #ff3d41;
+            color: white;
+          }
+        }
+
+        &[class*="Metacritic"] {
+          padding-left: 50px;
+
+          &:before {
+            @include subtitle;
+            content: "M";
+            height: calc(100% + 4px);
+
+            padding-left: 15px;
+            padding-right: 15px;
+
+            background: #003066;
+            color: white;
+          }
+        }
       }
     }
 
     &__plot {
+      margin-bottom: 20px;
       p {
         max-width: 80%;
       }
     }
 
-    &__cgd {
+    &__castGenreDirector {
       display: flex;
 
       div {
@@ -93,22 +204,6 @@
     background-size: cover;
     z-index: 999;
   }
-
-  &__back {
-    outline: 0;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 25px;
-
-    font-size: 1.4rem;
-    border: 0;
-    background: transparent;
-    color: $grayColor;
-
-    &:hover {
-      color: $primaryColor;
-    }
-  }
 }
 
 .ReactModal__Body--open {
@@ -130,9 +225,25 @@
     &__info {
       width: 100%;
 
+      &__ratings {
+        align-items: baseline;
+        flex-wrap: wrap;
+
+        &--rating {
+          margin: 10px;
+        }
+      }
+
+      &__castGenreDirector {
+        div {
+          padding-right: 20px;
+        }
+      }
+
       .heart {
         position: absolute;
-        top: 25px;
+        padding: 10px;
+        top: 30px;
         right: 30px;
 
         p {

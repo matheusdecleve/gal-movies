@@ -2,8 +2,8 @@
 
 $primaryColor: #fd554d;
 $secondaryColor: #0b1014;
-$lightColor: #333333;
-$grayColor: #7c7c7c;
+$lightColor: #171c20;
+$grayColor: #6c767e;
 
 $borderRadius: 6px;
 
@@ -12,6 +12,7 @@ $borderRadius: 6px;
   cursor: pointer;
 
   font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
   border: 0;
   background: transparent;
   color: white;
@@ -41,10 +42,7 @@ span {
 }
 
 b,
-strong {
-  font-weight: 700;
-}
-
+strong,
 h1,
 h2,
 h3 {

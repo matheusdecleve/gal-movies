@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div className="notFound">
       <h1>Oops! :(</h1>
-      <p>O filme que você está buscando não está disponível.</p>
+      <p>The movie you are looking for is not available.</p>
     </div>
   );
 };
