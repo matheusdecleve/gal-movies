@@ -9,7 +9,7 @@
   width: calc(20% - 20px);
   height: 320px;
   margin: 10px;
-  
+
   position: relative;
   overflow: hidden;
 
@@ -28,17 +28,17 @@
 
     p {
       margin: 5px 0;
-    }    
+    }
   }
 
   &__openModal {
-    @include btnTransparent; 
+    @include btnTransparent;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     width: 100%;
-    height: 100%;      
+    height: 100%;
   }
 
   .heart {
@@ -53,14 +53,15 @@
 
   img {
     width: 100%;
-    height: 100%;   
-    transition: 0.2s;   
+    height: 100%;
+    transition: 0.2s;
   }
 
   &:hover {
     background-image: linear-gradient(transparent, #000);
 
-    .movie__content, button {
+    .movie__content,
+    button {
       visibility: visible;
     }
 
@@ -79,5 +80,35 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and(max-width: 763px) {
+  .movie {
+    width: calc(50% - 20px);
+    height: 190px;
+
+    background-image: linear-gradient(transparent, #000);
+
+    &__content {
+      padding: 15px;
+      visibility: visible;
+
+      b {
+        font-size: 0.8rem;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    button {
+      visibility: visible;
+    }
+
+    img {
+      opacity: 0.2;
+    }
   }
 }

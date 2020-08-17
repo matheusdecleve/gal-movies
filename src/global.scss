@@ -88,13 +88,6 @@ h3 {
   }
 }
 
-.ReactModal__Body--open {
-  overflow: hidden;
-}
-.ReactModal__Overlay--after-open {
-  z-index: 9;
-}
-
 @import "./components/Loader/style";
 @import "./components/Search/style";
 @import "./components/NotFound/style";

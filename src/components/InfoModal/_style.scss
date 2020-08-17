@@ -17,7 +17,7 @@
     }
 
     b {
-      font-size:.8rem;
+      font-size: 0.8rem;
       color: $grayColor;
     }
 
@@ -37,12 +37,12 @@
       height: 100vh;
 
       position: absolute;
-      top:0;
-      right:0;
+      top: 0;
+      right: 0;
     }
   }
 
-  &__back {    
+  &__back {
     outline: 0;
     cursor: pointer;
     display: block;
@@ -56,5 +56,30 @@
     &:hover {
       color: $primaryColor;
     }
+  }
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+.ReactModal__Overlay--after-open {
+  z-index: 9;
+}
+
+@media screen and(max-width: 763px) {
+  .modal {
+    padding: 20px 0;
+    height: auto;
+
+    &__image {
+      display: none;
+    }
+    &__info {
+      width: 100%;
+    }
+  }
+
+  .ReactModal__Overlay--after-open {
+    overflow: scroll;
   }
 }
