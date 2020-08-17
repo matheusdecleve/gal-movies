@@ -70,10 +70,6 @@ const InfoModal = (props) => {
                 <p>{infoMovie.imdbRating}/10</p>
               </div>
               <div>
-                <b>Rotten Tomatoes</b>
-                <p></p>
-              </div>
-              <div>
                 <button
                   type="button"
                   className={`heart heart--${loved}`}
