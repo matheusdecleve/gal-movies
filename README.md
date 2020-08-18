@@ -6,11 +6,11 @@ Clique [aqui](https://galmovies-e8267.web.app/) para visualizar a aplicação.
 
 ##### Telas da aplicação
 
-- Página incial: Possui um campo(input) de busca para procurar os filmes, a mesma possui dois estados: "Empty", quando a aplicação é iniciada, e "Not Found" quando a busca não retorna nenhum resultado.
+**Página incial**: Possui um campo(input) de busca para procurar os filmes, a mesma possui dois estados: "Empty", quando a aplicação é iniciada, e "Not Found" quando a busca não retorna nenhum resultado.
 
-- Página de carregamento: É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
+**Página de carregamento**: É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
 
-- Página do filme: Exibe todas as informações do filme como título, poster, atores e outras informações. Ao invés de utilizar rotas, preferi utilizar um modal pois a performance foi melhor.
+**Página do filme**: Exibe todas as informações do filme como título, poster, atores e outras informações. Ao invés de utilizar rotas, preferi utilizar um modal pois a performance foi melhor.
 
 ##### Instruções para rodar a aplicação:
 
