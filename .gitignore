@@ -3,6 +3,8 @@
 # firebase
 .firebaserc
 /.firebase
+firebaserc
+firebase
 
 # dependencies
 /node_modules

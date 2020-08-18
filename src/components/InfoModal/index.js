@@ -17,9 +17,13 @@ import Loader from "../Loader";
 Modal.setAppElement("#root");
 
 const InfoModal = ({ id, open, close }) => {
+  // Variável que guarda o estado de loading, função que altera o loading.
   const [loading, setLoading] = useState(false);
+  // Variável que guarda as informações do filme, função que altera as informações.
   const [infoMovie, setInfoMovie] = useState([]);
+  // Variável que guarda as avaliações, função que altera as avaliações.
   const [ratings, setRatings] = useState([]);
+  // Variável que guarda o estado de favorito, função que altera os favoritos.
   const [loved, setLoved] = useState();
 
   // Função que executa ao abrir o modal - busca as informações do filme selecionado e exibe no modal.
