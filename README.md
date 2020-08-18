@@ -10,13 +10,13 @@ Clique [aqui](https://galmovies-e8267.web.app/) para visualizar a aplicação.
 
 ![Imagem da página Inicial](https://www.matheus.in/gal.jpg)
 
-**Página de carregamento**: É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
-
-![Imagem da tela de carregamento](https://www.matheus.in/gal1.jpg)
-
 **Página do filme**: Exibe todas as informações do filme como título, poster, atores e outras informações. Ao invés de utilizar rotas, preferi utilizar um modal pois a performance foi melhor.
 
 ![Imagem da tela do filme](https://www.matheus.in/gal2.jpg)
+
+**Página de carregamento**: É sempre exibida quando a página está carregando, ou seja, quando um filme é buscado ou é requisitado as informações do mesmo.
+
+![Imagem da tela de carregamento](https://www.matheus.in/gal1.jpg)
 
 ### Instruções para rodar a aplicação:
 
