@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+
+// Importa o ícone de coração.
 import { FaHeart } from "react-icons/fa";
 
+// Importa a imagem padrão.
 import DefaultImage from "../../assets/defaultimage.jpg";
 
 const Movie = ({ movie, selected }) => {
   const { imdbID, Title, Poster, Year } = movie;
 
+  // Variável que guarda se o filme é favorito ou não, função que altera o favorito do filme.
   const [loved, setLoved] = useState(
     localStorage.getItem(imdbID) !== null ? true : false
   );
 
+  // Função que altera o favorito do filme (Favoritar/Desfavoritar)
   const loveThisPost = () => {
     if (loved) {
       localStorage.removeItem(imdbID);
@@ -20,6 +25,7 @@ const Movie = ({ movie, selected }) => {
     }
   };
 
+  // Função que seleciona o filme escolhido e passa para o componente "InfoModal"
   const selectMovie = (id) => {
     selected(id);
   };

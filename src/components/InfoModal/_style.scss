@@ -1,3 +1,4 @@
+// Mixin usado nos subtítulos de ratings (IMDB, Rotten Tomatoes e Metacritic).
 @mixin subtitle {
   padding: 0 10px;
   display: flex;
@@ -11,6 +12,7 @@
   border-bottom-left-radius: $borderRadius;
 }
 
+// Modal que exibe as informações do filme.
 .modal {
   width: 100%;
   height: 100%;
@@ -22,6 +24,7 @@
   color: #fff;
   border: 0;
 
+  // Botão de voltar.
   &__back {
     outline: 0;
     cursor: pointer;
@@ -38,6 +41,7 @@
     }
   }
 
+  // Informações do filme.
   &__info {
     width: 70%;
 
@@ -54,6 +58,7 @@
       color: $grayColor;
     }
 
+    // Tempo de duração, Ano, Avaliação.
     &__runtimeYearRated {
       display: flex;
 
@@ -82,6 +87,7 @@
       }
     }
 
+    // Título do filme.
     &__title {
       h1 {
         font-size: 4rem;
@@ -90,6 +96,7 @@
       }
     }
 
+    // Avaliações do filme.
     &__ratings {
       display: flex;
       align-items: center;
@@ -112,6 +119,7 @@
           font-weight: 700;
         }
 
+        // Avaliação - Internet Movie Database.
         &[class*="Internet"] {
           padding-left: 70px;
 
@@ -125,6 +133,7 @@
           }
         }
 
+        // Avaliação - Rotten Tomatoes.
         &[class*="Rotten"] {
           padding-left: 55px;
 
@@ -143,6 +152,7 @@
           }
         }
 
+        // Avaliação - Metacritic.
         &[class*="Metacritic"] {
           padding-left: 50px;
 
@@ -161,6 +171,7 @@
       }
     }
 
+    // Plot do filme.
     &__plot {
       margin-bottom: 20px;
       p {
@@ -168,6 +179,7 @@
       }
     }
 
+    // Atores, Gêneros e Diretores.
     &__castGenreDirector {
       display: flex;
 
@@ -177,6 +189,7 @@
       }
     }
 
+    // Botão de coração.
     .heart {
       padding: 0 20px;
       border-radius: $borderRadius;
@@ -194,6 +207,7 @@
     }
   }
 
+  // Imagem do filme.
   &__image {
     width: 30%;
     height: 100vh;
@@ -206,13 +220,17 @@
   }
 }
 
+// Classe do body quando o modal está aberto
 .ReactModal__Body--open {
   overflow: hidden;
 }
+
+// Classe do modal quando está aberto.
 .ReactModal__Overlay--after-open {
   z-index: 9;
 }
 
+// Estilos responsivos.
 @media screen and(max-width: 763px) {
   .modal {
     padding: 20px;

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Esse componente é exibido caso a busca traga nenhum resultado.
 const NotFound = () => {
   return (
     <div className="notFound">

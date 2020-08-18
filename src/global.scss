@@ -1,12 +1,16 @@
+// Importa a fonte do google fonts.
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
+// Variáveis de cor.
 $primaryColor: #fd554d;
 $secondaryColor: #0b1014;
 $lightColor: #171c20;
 $grayColor: #6c767e;
 
+// Variáveis de valores.
 $borderRadius: 6px;
 
+// Botão transparente.
 @mixin btnTransparent {
   outline: 0;
   cursor: pointer;
@@ -21,6 +25,7 @@ $borderRadius: 6px;
   }
 }
 
+// Todos elementos.
 * {
   box-sizing: border-box;
   outline: none;
@@ -63,6 +68,7 @@ h3 {
   justify-content: space-between;
 }
 
+// Botão de coração para favoritar/desfavoritar o filme.
 .heart {
   @include btnTransparent;
   display: flex;
@@ -70,12 +76,14 @@ h3 {
   align-items: center;
   z-index: 2;
 
+  // Filme não favorito.
   &--false {
     &:hover {
       color: white;
     }
   }
 
+  // Filme favorito.
   &--true {
     visibility: visible !important;
     color: $primaryColor;
@@ -88,6 +96,7 @@ h3 {
   }
 }
 
+// Importa os estilos dos componentes.
 @import "./components/Loader/style";
 @import "./components/Search/style";
 @import "./components/NotFound/style";

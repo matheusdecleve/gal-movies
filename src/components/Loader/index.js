@@ -1,5 +1,6 @@
 import React from "react";
 
+// Importa a imagem de loading.
 import Loading from "../../assets/loader.gif";
 
 const Loader = () => {

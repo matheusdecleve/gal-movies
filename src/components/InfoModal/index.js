@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaHeart } from "react-icons/fa";
 import axios from "axios";
+
+// Importa o ícone do coração e seta esquerda.
+import { FaArrowLeft, FaHeart } from "react-icons/fa";
+
+// Importa o react modal.
 import Modal from "react-modal";
 
+// Importa a imagem padrão - exibe quando o filme não tem imagem.
 import DefaultImage from "../../assets/defaultimage.jpg";
+
+// Importa o componente Loader.
 import Loader from "../Loader";
 
+// Seta a div principal para o modal
 Modal.setAppElement("#root");
 
 const InfoModal = ({ id, open, close }) => {
@@ -14,23 +22,29 @@ const InfoModal = ({ id, open, close }) => {
   const [ratings, setRatings] = useState([]);
   const [loved, setLoved] = useState();
 
+  // Função que executa ao abrir o modal - busca as informações do filme selecionado e exibe no modal.
   async function afterOpenModal() {
+    // Inicia o loading.
     setLoading(true);
 
     await axios
       .get(`https://www.omdbapi.com/?i=${id}&apikey=517a0b64&`)
       .then((res) => {
+        // Atualiza as informações do filme.
         setInfoMovie(res.data);
+        // Atualiza os ratings do filme.
         setRatings(res.data.Ratings);
+        // Altera o estado de favorito do filme.
         setLoved(localStorage.getItem(id) ? true : false);
       });
 
+    // Finaliza o loading.
     setLoading(false);
   }
 
+  // Função que altera o favorito do filme (Favoritar/Desfavoritar).
   const loveThisPost = () => {
     let heartButton = document.getElementById(id);
-
     if (loved) {
       localStorage.removeItem(id);
       heartButton.classList.remove("heart--true");
@@ -44,10 +58,12 @@ const InfoModal = ({ id, open, close }) => {
     }
   };
 
+  // Função que fecha o modal
   const closeModal = () => {
     close(false);
   };
 
+  // Exibe o loading quando a página estiver carregando.
   return (
     <Modal onAfterOpen={afterOpenModal} isOpen={open} className="modal">
       {loading ? (
@@ -80,7 +96,6 @@ const InfoModal = ({ id, open, close }) => {
                   </div>
                 );
               })}
-
               <div>
                 <button
                   type="button"
