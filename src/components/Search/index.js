@@ -36,9 +36,10 @@ const Search = ({ info }) => {
   } else {
     return (
       <form className="search" onSubmit={handleSearch}>
+        <h2>What would you like to watch today?</h2>
         <input
           type="text"
-          placeholder="What would you like to watch today?"
+          placeholder="Search movie or serie"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

@@ -29,10 +29,22 @@ form.search {
       border-color: $primaryColor;
       box-shadow: 0px 0px 10px $primaryColor;
     }
+  }
 
-    // Diminui a fonte no dispositivo móvel.
-    @media screen and(max-width:763px) {
+  h2 {
+    margin: 0;
+  }
+}
+
+// Diminui a fonte no dispositivo móvel e esconde o título.
+@media screen and(max-width:763px) {
+  form.search {
+    input[type="text"] {
       font-size: 0.95rem;
+    }
+
+    h2 {
+      display: none;
     }
   }
 }
