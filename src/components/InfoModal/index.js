@@ -18,7 +18,7 @@ const InfoModal = ({ id, open, close }) => {
     setLoading(true);
 
     await axios
-      .get(`http://www.omdbapi.com/?i=${id}&apikey=517a0b64&`)
+      .get(`https://www.omdbapi.com/?i=${id}&apikey=517a0b64&`)
       .then((res) => {
         setInfoMovie(res.data);
         setRatings(res.data.Ratings);

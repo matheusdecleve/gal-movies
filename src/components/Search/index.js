@@ -12,7 +12,7 @@ const Search = ({ info }) => {
     setLoading(true);
 
     await axios
-      .get(`http://www.omdbapi.com/?s=${search}&apikey=517a0b64&`)
+      .get(`https://www.omdbapi.com/?s=${search}&apikey=517a0b64&`)
       .then((res) => {
         res.data.Search ? info(res.data.Search, false) : info("", true);
         setSearch("");

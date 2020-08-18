@@ -2,6 +2,8 @@
 
 Desenvolvida em JavaScript utilizando o framework ReactJs a aplicação consiste em um portal de filmes/séries, onde permite o usuário buscar por um filme e visualizar suas informações, o usuário também pode adicionar ou remover seus filmes preferidos de favoritos. A aplicação é responsiva, podendo ser utilizada através de desktops, celulares e outros dispositivos.
 
+Clique [aqui](https://galmovies-e8267.web.app/) para visualizar a aplicação.
+
 ##### Telas da aplicação
 
 - Página incial: Possui um campo(input) de busca para procurar os filmes, a mesma possui dois estados: "Empty", quando a aplicação é iniciada, e "Not Found" quando a busca não retorna nenhum resultado.

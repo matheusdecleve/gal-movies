@@ -225,6 +225,13 @@
     &__info {
       width: 100%;
 
+      &__title {
+        h1 {
+          font-size: 3rem;
+          line-height: 3.4rem;
+        }
+      }
+
       &__ratings {
         align-items: baseline;
         flex-wrap: wrap;
@@ -235,7 +242,9 @@
       }
 
       &__castGenreDirector {
+        display: block;
         div {
+          width: 100%;
           padding-right: 20px;
         }
       }
